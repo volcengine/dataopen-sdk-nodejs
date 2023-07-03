@@ -35,7 +35,7 @@ describe("Request GET Test", function () {
     let body = {};
 
     let res = await client.request(
-      "/libra/openapi/v1/open/flight-list",
+      "/xxx/openapi/v1/open/flight-list",
       "GET",
       headers,
       params,
@@ -65,7 +65,7 @@ describe("Request POST Test", function () {
     };
 
     let res = await client.request(
-      "/libra/openapi/v1/open/flight/version/6290880/add-test-user",
+      "/xxx/openapi/v1/open/flight/version/6290880/add-test-user",
       "POST",
       headers,
       params,

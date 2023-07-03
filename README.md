@@ -42,7 +42,7 @@ let params: Record<string, any> = {
 };
 
 let res = await client.request(
-  "/libra/openapi/v1/open/flight-list",
+  "/xxx/openapi/v1/open/flight-list",
   "GET",
   headers,
   params,

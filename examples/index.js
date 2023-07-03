@@ -15,7 +15,7 @@ async function test_get() {
   };
 
   let res = await client.request(
-    "/libra/openapi/v1/open/flight-list",
+    "/xxx/openapi/v1/open/flight-list",
     "GET",
     headers,
     params,
@@ -41,7 +41,7 @@ async function test_post() {
   let version_id = 6290880;
 
   let res = await client.request(
-    `/libra/openapi/v1/open/flight/version/${version_id}/add-test-user`,
+    `/xxx/openapi/v1/open/flight/version/${version_id}/add-test-user`,
     "POST",
     headers,
     params,
