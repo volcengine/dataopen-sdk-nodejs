@@ -30,8 +30,9 @@ import { Client } from "dataopen-sdk-nodejs";
 
 let app_id = "";
 let app_secret = "";
+let url = "";
 
-let client = new Client(app_id, app_secret);
+let client = new Client(app_id, app_secret, url);
 
 let headers = {};
 
@@ -58,8 +59,9 @@ import { Client } from "dataopen-sdk-nodejs";
 
 let app_id = "";
 let app_secret = "";
+let url = "";
 
-let client = new Client(app_id, app_secret);
+let client = new Client(app_id, app_secret, url);
 
 let headers = {};
 

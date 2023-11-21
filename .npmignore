@@ -2,3 +2,7 @@
 node_modules
 .vscode/
 target/
+release/
+src/
+build.sh
+pnpm.lock-yaml

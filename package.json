@@ -1,6 +1,6 @@
 {
-  "name": "@dp/dataopen-sdk-nodejs",
-  "version": "1.0.1",
+  "name": "dataopen-sdk-nodejs",
+  "version": "0.0.1",
   "description": "",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -11,8 +11,8 @@
     "test": "jest"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "caichengnan@bytedance.com",
+  "license": "Apache-2.0",
   "dependencies": {
     "node-fetch": "^2.6.7"
   },
