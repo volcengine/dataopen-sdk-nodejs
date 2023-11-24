@@ -35,7 +35,7 @@ describe("Request GET Test", function () {
     let body = {};
 
     let res = await client.request(
-      "/xxx/openapi/v1/open/flight-list",
+      "/dataopen/open-apis/xxx/openapi/v1/open/flight-list",
       "GET",
       headers,
       params,
@@ -65,7 +65,7 @@ describe("Request POST Test", function () {
     };
 
     let res = await client.request(
-      "/xxx/openapi/v1/open/flight/version/6290880/add-test-user",
+      "/dataopen/open-apis/xxx/openapi/v1/open/flight/version/6290880/add-test-user",
       "POST",
       headers,
       params,
@@ -86,8 +86,7 @@ describe("Request Material GET Test", function () {
     let client = new Client(
       app_id,
       app_secret,
-      "https://analytics.volcengineapi.com",
-      "dataopen_staging"
+      "https://analytics.volcengineapi.com"
     );
 
     let headers = {};
@@ -121,8 +120,7 @@ describe("Request POST Test", function () {
     let client = new Client(
       app_id,
       app_secret,
-      "https://analytics.volcengineapi.com",
-      "dataopen_staging"
+      "https://analytics.volcengineapi.com"
     );
 
     let headers = {};
@@ -159,8 +157,7 @@ describe("Request Put Test", function () {
     let client = new Client(
       app_id,
       app_secret,
-      "https://analytics.volcengineapi.com",
-      "dataopen_staging"
+      "https://analytics.volcengineapi.com"
     );
 
     let headers = {};

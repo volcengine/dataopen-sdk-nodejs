@@ -7,7 +7,6 @@
 | app_id     | string          | 无                              | 应用的唯一标识符                  |
 | app_secret | string          | 无                              | 用于应用的安全认证的密钥          |
 | url        | string or null  | "https://analytics.volcengineapi.com"    | 服务器的URL地址                  |
-| env        | string or null  | "dataopen"                      | 环境设置，可选值为 "dataopen" 或 "dataopen_staging" |
 | expiration | string or null  | "1800"                          | 过期时间，单位是秒            |
 
 ## client.request参数说明
@@ -43,7 +42,7 @@ let params: Record<string, any> = {
 };
 
 let res = await client.request(
-  "/xxx/openapi/v1/open/flight-list",
+  "/dataopen/open-apis/xxx/openapi/v1/open/flight-list",
   "GET",
   headers,
   params,
@@ -74,7 +73,7 @@ let body: Record<string, any> = {
 let version_id = 6290880;
 
 let res = await client.request(
-  `/xxx/openapi/v1/open/flight/version/${version_id}/add-test-user`,
+  `/dataopen/open-apis/xxx/openapi/v1/open/flight/version/${version_id}/add-test-user`,
   "POST",
   headers,
   params,

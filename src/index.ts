@@ -29,25 +29,22 @@ export class Client {
   public app_id: string;
   public app_secret: string;
   public url: string | null;
-  public env: string | null;
   public expiration: string | null;
   private _access_token: string;
   private _ttl: number;
   private _token_time: number;
 
-  static OPEN_APIS_PATH = "/open-apis";
+  static OPEN_APIS_PATH = "/dataopen/open-apis";
 
   constructor(
     app_id: string,
     app_secret: string,
     url: string | null = "https://analytics.volcengineapi.com",
-    env: string | null = "dataopen", // "dataopen" | "dataopen_staging"
     expiration: string | null = "1800"
   ) {
     this.app_id = app_id;
     this.app_secret = app_secret;
     this.url = url;
-    this.env = env;
     this.expiration = expiration;
     this._ttl = 0;
     this._access_token = "";
@@ -76,7 +73,7 @@ export class Client {
     }
 
     const completed_url: string =
-      this.url + "/" + this.env + Client.OPEN_APIS_PATH + service_url;
+      this.url + service_url;
 
     const query_url = this._joint_query(completed_url, params);
 
@@ -111,9 +108,8 @@ export class Client {
   }
 
   async handle_token() {
-    const authorization_url: string =
-      this.env + Client.OPEN_APIS_PATH + "/v1/authorization";
-    const completed_url: string = this.url + "/" + authorization_url;
+    const authorization_url: string = Client.OPEN_APIS_PATH + "/v1/authorization";
+    const completed_url: string = this.url + authorization_url;
 
     const map = {
       app_id: this.app_id,
