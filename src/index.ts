@@ -66,14 +66,14 @@ export class Client {
     const new_headers: Record<string, any> = {
       Authorization: this._access_token,
       "Content-Type": "application/json",
+      "x-sdk-source": "nodejs",
     };
 
     for (const key in headers) {
       new_headers[key] = headers[key];
     }
 
-    const completed_url: string =
-      this.url + service_url;
+    const completed_url: string = this.url + service_url;
 
     const query_url = this._joint_query(completed_url, params);
 
@@ -108,7 +108,8 @@ export class Client {
   }
 
   async handle_token() {
-    const authorization_url: string = Client.OPEN_APIS_PATH + "/v1/authorization";
+    const authorization_url: string =
+      Client.OPEN_APIS_PATH + "/v1/authorization";
     const completed_url: string = this.url + authorization_url;
 
     const map = {
@@ -120,7 +121,7 @@ export class Client {
       await fetch(completed_url, {
         method: "POST",
         body: JSON.stringify(map),
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", "x-sdk-source": "nodejs" },
       })
     ).json()) as ApiResponse;
 
@@ -137,10 +138,7 @@ export class Client {
     return !!this._access_token;
   }
 
-  private _joint_query(
-    url: string,
-    params: Record<string, any>
-  ): string {
+  private _joint_query(url: string, params: Record<string, any>): string {
     const paramStr = Object.entries(params)
       .map(([key, val]) => `${key}=${val}`)
       .join("&");
